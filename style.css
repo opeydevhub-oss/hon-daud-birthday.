@@ -78,3 +78,19 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 @media(max-width:600px){.opening-screen{padding:18px}.opening-content{padding:12px 0}.opening-content h1{font-size:clamp(29px,8vw,47px);letter-spacing:-.04em}.opening-emblem{width:56px;height:56px;font-size:21px;margin-bottom:18px}.opening-overline{font-size:8px;letter-spacing:.14em}.opening-pretitle{font-size:14px}.opening-caption{font-size:12px;margin:12px 0 16px}.opening-footnote{font-size:7px;letter-spacing:.13em;margin-top:14px}}
 @media(max-height:720px){.opening-content{padding:8px 0}.opening-emblem{width:46px;height:46px;font-size:18px;margin-bottom:10px}.opening-overline{margin-bottom:8px}.opening-rule{margin-bottom:9px}.opening-pretitle{margin-bottom:7px}.opening-caption{margin:9px 0 12px}.opening-footnote{margin-top:9px}}
 @media(prefers-reduced-motion:reduce){.opening-content{animation:none!important}}
+
+/* Final mobile opening overlay correction */
+.opening-screen{position:fixed!important;inset:0!important;z-index:99999!important;display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;height:100vh!important;height:100dvh!important;min-height:0!important;margin:0!important;padding:24px 18px!important;overflow-y:auto!important;overflow-x:hidden!important;background:radial-gradient(ellipse at 50% 35%,#f8f4ec 0%,#eee8de 52%,#e4ddd2 100%)!important}
+.opening-content{position:relative!important;z-index:2!important;width:100%!important;max-width:590px!important;min-width:0!important;margin:auto!important;padding:20px 0!important;text-align:center!important;flex:0 1 590px!important}
+.opening-content h1{width:100%!important;max-width:100%!important;font-size:clamp(30px,8vw,58px)!important;line-height:1.12!important;letter-spacing:-.04em!important;overflow-wrap:break-word!important;word-break:normal!important}
+.opening-content h1 em{display:inline!important}
+.opening-screen:before,.opening-screen:after{position:absolute!important;left:50%!important;top:50%!important;max-width:95vw!important;pointer-events:none!important}
+.opening-screen:before{animation:opening-ring-one 28s linear infinite!important}
+.opening-screen:after{animation:opening-ring-two 36s linear infinite!important}
+.opening-grain{position:absolute!important;inset:0!important;z-index:0!important}
+.opening-corner{z-index:1!important}
+@keyframes opening-popup-final{0%{opacity:0;transform:translateY(25px) scale(.94);filter:blur(4px)}70%{opacity:1;transform:translateY(-2px) scale(1.01);filter:blur(0)}100%{opacity:1;transform:translateY(0) scale(1)}}
+.opening-content{animation:opening-popup-final .85s cubic-bezier(.2,.75,.25,1) both!important}
+@media(max-width:600px){.opening-screen{padding:18px 20px!important}.opening-content{padding:12px 0!important}.opening-content h1{font-size:clamp(29px,8vw,47px)!important;line-height:1.16!important}.opening-emblem{width:54px!important;height:54px!important;margin-bottom:17px!important}.opening-overline{font-size:8px!important;letter-spacing:.14em!important}.opening-pretitle{font-size:14px!important;line-height:1.5!important}.opening-caption{font-size:12px!important;margin:12px 0 16px!important}.opening-footnote{font-size:7px!important;letter-spacing:.13em!important;margin-top:13px!important}}
+@media(max-height:650px){.opening-content{padding:6px 0!important}.opening-emblem{width:43px!important;height:43px!important;margin-bottom:8px!important}.opening-overline{margin-bottom:7px!important}.opening-rule{margin-bottom:8px!important}.opening-pretitle{margin-bottom:6px!important}.opening-caption{margin:8px 0 10px!important}.opening-footnote{margin-top:8px!important}}
+@media(prefers-reduced-motion:reduce){.opening-content{animation:none!important}}
