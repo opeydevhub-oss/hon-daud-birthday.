@@ -69,3 +69,12 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
  .opening-caption{margin:14px 0 17px}
  .opening-footnote{margin-top:15px}
 }
+
+/* Mobile opening-screen overflow fix and pop-in animation */
+.opening-screen{position:fixed!important;inset:0!important;width:100%!important;height:100vh!important;height:100dvh!important;min-height:100vh;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain}
+.opening-content{width:min(100%,590px);max-width:100%;min-width:0;animation:opening-pop-in .8s cubic-bezier(.2,.75,.25,1) both}
+.opening-content h1{max-width:100%;font-size:clamp(30px,7.8vw,66px);line-height:1.13;overflow-wrap:anywhere;word-break:normal}
+@keyframes opening-pop-in{0%{opacity:0;transform:translateY(22px) scale(.96);filter:blur(3px)}70%{opacity:1;transform:translateY(-2px) scale(1.006);filter:blur(0)}100%{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:600px){.opening-screen{padding:18px}.opening-content{padding:12px 0}.opening-content h1{font-size:clamp(29px,8vw,47px);letter-spacing:-.04em}.opening-emblem{width:56px;height:56px;font-size:21px;margin-bottom:18px}.opening-overline{font-size:8px;letter-spacing:.14em}.opening-pretitle{font-size:14px}.opening-caption{font-size:12px;margin:12px 0 16px}.opening-footnote{font-size:7px;letter-spacing:.13em;margin-top:14px}}
+@media(max-height:720px){.opening-content{padding:8px 0}.opening-emblem{width:46px;height:46px;font-size:18px;margin-bottom:10px}.opening-overline{margin-bottom:8px}.opening-rule{margin-bottom:9px}.opening-pretitle{margin-bottom:7px}.opening-caption{margin:9px 0 12px}.opening-footnote{margin-top:9px}}
+@media(prefers-reduced-motion:reduce){.opening-content{animation:none!important}}
